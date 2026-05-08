@@ -6,10 +6,10 @@ env/
 *.pkl
 *.csv
 *.xlsx
-*.html
-*.png
-*.jpg
-*.jpeg
+
+
+
+
 *.backup.ipynb
 *.before_*.ipynb
 .DS_Store
