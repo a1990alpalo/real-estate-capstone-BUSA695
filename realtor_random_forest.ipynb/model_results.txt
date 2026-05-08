@@ -1,0 +1,96 @@
+
+===============================
+MODEL RESULTS SUMMARY
+===============================
+
+Timestamp: 2026-04-26 17:57:02
+
+--- Random Forest ---
+R² (log scale): 0.615310
+R² (original scale): 0.262399
+MAE ($): 218,186.31
+
+--- Cross Validation ---
+CV R² mean: 0.624195
+CV R² std: 0.006562
+
+--- Gradient Boosting ---
+R² (log scale): 0.538807
+R² (original scale): 0.187573
+MAE ($): 242,385.16
+
+===============================
+END OF RESULTS
+===============================
+
+===============================
+MODEL RESULTS SUMMARY
+===============================
+
+Timestamp: 2026-04-30 20:05:54
+
+--- Random Forest ---
+R² (log scale): 0.615123
+R² (original scale): 0.263301
+MAE ($): 218,208.65
+
+--- Cross Validation ---
+CV R² mean: 0.624078
+CV R² std: 0.006652
+
+--- Gradient Boosting ---
+R² (log scale): 0.538807
+R² (original scale): 0.187573
+MAE ($): 242,385.16
+
+===============================
+END OF RESULTS
+===============================
+
+===============================
+MODEL RESULTS SUMMARY
+===============================
+
+Timestamp: 2026-05-03 16:31:24
+
+--- Random Forest ---
+R² (log scale): 0.615123
+R² (original scale): 0.263301
+MAE ($): 218,208.65
+
+--- Cross Validation ---
+CV R² mean: 0.624078
+CV R² std: 0.006652
+
+--- Gradient Boosting ---
+R² (log scale): 0.538807
+R² (original scale): 0.187573
+MAE ($): 242,385.16
+
+===============================
+END OF RESULTS
+===============================
+
+===============================
+MODEL RESULTS SUMMARY
+===============================
+
+Timestamp: 2026-05-03 17:08:47
+
+--- Random Forest ---
+R² (log scale): 0.615123
+R² (original scale): 0.263301
+MAE ($): 218,208.65
+
+--- Cross Validation ---
+CV R² mean: 0.624078
+CV R² std: 0.006652
+
+--- Gradient Boosting ---
+R² (log scale): 0.538807
+R² (original scale): 0.187573
+MAE ($): 242,385.16
+
+===============================
+END OF RESULTS
+===============================

@@ -1,0 +1,16 @@
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+env/
+*.pyc
+*.pkl
+*.csv
+*.xlsx
+*.html
+*.png
+*.jpg
+*.jpeg
+*.backup.ipynb
+*.before_*.ipynb
+.DS_Store
+Thumbs.db
