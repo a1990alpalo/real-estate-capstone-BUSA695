@@ -1,0 +1,159 @@
+﻿
+Slide 1 - Title Slide
+Hello everyone, my name is Alberto Medina, and today I will be presenting my BUSA 695 Capstone Project.
+
+My project focuses on predicting U.S. housing prices using machine learning. The main idea behind this project was to take a large real estate dataset, clean it, analyze it, build different models, and then use the results to support pricing decisions.
+
+The story of this project is not just about building a model. It is about moving from raw data to useful business insight. In real estate, pricing decisions are very important because a home that is priced too high may sit on the market too long, while a home priced too low may lead to lost value for the seller.
+
+So, the goal of this project was to see whether property features and location data could help estimate housing prices in a practical and useful way.
+
+Slide 2 - Executive Story in One Minute
+This slide gives the executive summary of the project.
+
+The main business question was: can property features and location data help estimate home prices accurately enough to support pricing decisions?
+
+The answer is yes, but with some important conditions. The data showed that housing prices are affected by many different factors. Things like house size, number of bedrooms, number of bathrooms, lot size, property status, and especially location all matter.
+
+One important finding was that simple models were not strong enough because the relationship between these variables and price is not always linear. For example, adding one more bedroom does not always increase the price by the same amount in every city or every market.
+
+Because of that, the Random Forest model performed better than the simple Linear Regression model. However, the model should be used as a decision-support tool. It should not fully replace human review, local market knowledge, or professional real estate judgment.
+
+The overall workflow was: raw data, cleaning and feature engineering, model training, evaluation, and then mapping the results.
+
+Slide 3 - Business Problem and Stakeholders
+The business problem is that housing prices are complex. A home price is not based on just one factor. It depends on the physical features of the property, the location, the market, and other conditions.
+
+For example, two houses may have the same number of bedrooms and bathrooms, but if one is in a stronger market or better location, the price can be very different.
+
+That is why this project matters. A machine learning model can help organize all these signals and make price estimates more consistent.
+
+The stakeholders for this project could include real estate analysts, listing teams, buyers, sellers, lenders, and data teams that are building pricing tools.
+
+For a real estate analyst, the model can help estimate a likely price range. For listing teams, it can support pricing conversations with sellers. For buyers and lenders, it can help flag listings that seem unusually high or unusually low compared to the model prediction.
+
+The main goal was to create useful predictions, but also to explain the results in a way that stakeholders can understand.
+
+Slide 4 - Data Foundation
+For the data foundation, I used a large U.S. real estate dataset with about 2.2 million rows. This gave the project a strong starting point because the dataset included a large number of property records.
+
+The primary target variable was home price. That means the model was trained to predict the price of a property based on other features.
+
+Some of the key fields used included price, bedrooms, bathrooms, lot size, house size, property status, city, state, and zip code.
+
+The size of the dataset was a major advantage, but it also created challenges. Large datasets usually require more preparation before they can be used for machine learning.
+
+There were missing values, extreme outliers, string categories, and high-cardinality location fields. High-cardinality means that a column has many unique values. For example, city or zip code can have thousands of different values, and that can make modeling more difficult.
+
+So before building any model, I had to prepare the dataset carefully.
+
+Slide 5 - Preparation Workflow
+This slide shows the preparation workflow.
+
+The first step was exploration. I checked the shape of the dataset, the column names, data types, missing values, and summary statistics.
+
+The second step was cleaning. For missing numeric values, I used median imputation. This means I filled missing values using the median instead of the mean, because the median is less affected by extreme outliers.
+
+The third step was controlling outliers. This was important because real estate data can include very unusual properties, such as extremely expensive homes, very large lots, or properties with unrealistic values. I capped extreme values for price, lot size, bedrooms, bathrooms, and house size so the model could focus more on typical property patterns.
+
+The fourth step was feature engineering. I created new variables such as total rooms and ratios that could help the model understand relationships between features.
+
+The fifth step was encoding. Since machine learning models need numeric inputs, I converted categorical fields such as status and location into a format the model could use.
+
+The biggest lesson from this part is that good analytics starts before the model. Data quality, feature choices, and business logic are just as important as the algorithm itself.
+
+Slide 6 - Exploratory Analysis
+During exploratory data analysis, I learned that housing price is multi-factor and location-sensitive.
+
+One important finding was that price had a right-skewed distribution. This means most homes were in a lower or middle price range, but some properties were extremely expensive. Because of that, log transformation was useful. Log transformation helps reduce skewness and makes the model focus more on proportional differences instead of being dominated by extreme prices.
+
+Another finding was that larger homes usually had higher prices, but the relationship was not perfectly linear. A bigger house does not always mean a higher price if the location or condition is different.
+
+Location was one of the strongest signals in the data. This makes sense because real estate is highly local. The same size house can have a completely different price depending on the city, state, or zip code.
+
+Outliers also had to be controlled because they could distort the model results.
+
+The bottom line from the exploratory analysis was that a simple straight-line model was not enough for this project.
+
+Slide 7 - Modeling Strategy
+For the modeling strategy, I compared different models to see which approach worked best.
+
+The first model was Linear Regression. I used this as the baseline model. A baseline model is important because it gives something to compare against. Linear Regression is simple and easy to explain, but it assumes a straight-line relationship between the features and the target.
+
+The second model was Random Forest. This became the main model for the project. Random Forest is useful because it can handle non-linear relationships and interactions between features. In housing data, that is important because variables often work together. For example, house size, bedrooms, bathrooms, and location may combine in different ways depending on the market.
+
+The third model was Gradient Boosting. I used this as a comparison model to test whether another tree-based method could improve performance.
+
+To evaluate the models, I looked at R-squared, M.A.E., log-scale performance, cross-validation, and feature importance.
+
+R-squared helped measure how much variation in price the model could explain. M.A.E., or mean absolute error, helped measure the average prediction error in dollars.
+
+Slide 8 - Model Results
+This slide summarizes the model results.
+
+The main finding was that tree-based models performed better than the simple linear baseline. This means that models like Random Forest were better at capturing the complex patterns in the housing data.
+
+Random Forest gave the most balanced result for this project. It improved strongly over Linear Regression and still remained explainable enough for a business audience.
+
+One important caution was around very high scores. During the project, I had to be careful with possible data leakage. Data leakage happens when the model accidentally gets access to information that would not be available in a real prediction situation.
+
+For example, if an engineered feature is too directly connected to price, the model may appear to perform extremely well, but the result may not be realistic. That is why it is important to review the features carefully and make sure the model is learning from valid information.
+
+For the final project story, I selected Random Forest because it gave strong results and was a practical model for this type of pricing problem.
+
+Slide 9 - Feature Importance
+After choosing the model, I also looked at feature importance.
+
+Feature importance helps explain which variables had the most influence on the predictions. This is important because stakeholders usually do not want just a prediction. They also want to understand why the model is making that prediction.
+
+The results showed that location and size were among the strongest drivers. This supports the common real estate idea of location, location, location.
+
+Bedrooms and bathrooms also helped explain livability and market value. These features matter because they affect how useful and attractive a property is to buyers.
+
+Engineered features also helped improve the model because they captured relationships that raw columns may miss. For example, combining rooms or creating ratios can help the model understand the property better.
+
+The business value of feature importance is that it makes the model easier to explain to non-technical stakeholders.
+
+Slide 10 - Visual Output
+For the visual output, I used Folium to create an interactive map of predicted prices.
+
+This was one of the most important parts of the project because real estate is geographic. A table of predictions can be useful, but a map makes the results easier to understand.
+
+The map allowed users to inspect actual price, predicted price, and prediction error by location.
+
+In the map, green represented cases where the model predicted below the actual price, and red represented cases where the model predicted above the actual price.
+
+This type of visualization can help stakeholders quickly identify where the model is performing well and where it may be missing something. For example, if errors are clustered in certain areas, that may mean the model needs better location features or more local market information.
+
+The map turned the model from just a technical output into something more useful for business decision-making.
+
+Slide 11 - Recommendations and Limitations
+This slide covers the recommendations and limitations.
+
+My first recommendation is to use Random Forest as a pricing support model. It should help guide pricing decisions, but it should not be the only source of truth.
+
+Second, stakeholders should combine model predictions with local market review. Real estate markets change quickly, and local knowledge is still very important.
+
+Third, location features should continue to be improved. Since location is one of the strongest drivers of housing price, better location data could improve the model.
+
+Fourth, the model should be monitored over time. A model that works well today may become less accurate if the market changes.
+
+Finally, maps and feature importance should be used to explain the results. This helps make the model more transparent and easier to trust.
+
+There were also limitations. Missing values and outliers required assumptions. Some location fields had too many categories. The model did not include every possible driver, such as school quality, mortgage rates, neighborhood condition, or recent local sales.
+
+So the model is useful, but it should be used responsibly.
+
+Slide 12 - Final Conclusion
+To conclude, this capstone project delivered a complete analytics workflow from data to decision support.
+
+I started with a large raw real estate dataset, explored the data, cleaned missing values and outliers, engineered features, compared multiple models, evaluated the results, and created a map to make the predictions easier to understand.
+
+The main takeaway is that machine learning can improve housing price estimation when the data is carefully prepared and the results are explained in business terms.
+
+Random Forest was the best model for the final story because it handled non-linear relationships better than the baseline model and gave useful insights through feature importance.
+
+This project also showed me that analytics is not only about getting the highest model score. It is about asking the right business question, preparing the data correctly, testing different methods, and explaining the results clearly to stakeholders.
+
+Thank you for listening to my presentation.
+
